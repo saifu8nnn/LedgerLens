@@ -3,7 +3,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
 # Fetch the database URL from the .env file.
-# If it's not found (e.g., in a new environment), it falls back to your local Docker setup.
 DATABASE_URL = os.getenv(
     "DATABASE_URL", 
     "postgresql://admin:securepass@127.0.0.1:5432/ledgerlens"

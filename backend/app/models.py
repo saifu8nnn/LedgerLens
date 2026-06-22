@@ -11,11 +11,11 @@ class PurchaseOrder(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     
-    # The exact name of the item ordered (e.g., "Lenovo ThinkPad L14")
+   
     item_name = Column(String, unique=True, index=True)
     
-    # The maximum quantity the vendor is authorized to bill for
+   
     approved_quantity = Column(Integer)
     
-    # The contracted unit price negotiated with the vendor (in Rupees)
+    
     approved_price = Column(Float)

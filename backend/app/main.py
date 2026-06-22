@@ -6,35 +6,32 @@ from sqlalchemy.orm import Session
 from dotenv import load_dotenv
 from groq import Groq
 from fastapi.middleware.cors import CORSMiddleware
-
-# Load environment variables from the .env file
-load_dotenv()
-
-# Import local modules from our enterprise folder structure
 from .database import engine, Base, get_db
 from .models import PurchaseOrder
 
-# Automatically generate database tables on startup
+
+load_dotenv()
+
+
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="LedgerLens AI 3-Way Match Audit Engine")
 
-# --- ADD THIS BLOCK TO ALLOW THE FRONTEND TO TALK TO THE API ---
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins for local hackathon testing
+    allow_origins=["*"],  
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],  
+    allow_headers=["*"],  
 )
-# --------------------------------------------------------------
 
-# Auto-seed the database on startup with approved enterprise records
 @app.on_event("startup")
 def seed_db():
     db = next(get_db())
     
-    # Our expanded enterprise catalog
+    
     sample_pos = [
         PurchaseOrder(item_name="Lenovo ThinkPad L14", approved_quantity=50, approved_price=85000.0),
         PurchaseOrder(item_name="Ergonomic Office Chair", approved_quantity=100, approved_price=4500.0),
@@ -46,7 +43,7 @@ def seed_db():
         PurchaseOrder(item_name="Cisco Meraki MR46 Access Point", approved_quantity=15, approved_price=42000.0)
     ]
     
-    # Smarter insertion: Only add items if they don't already exist in the database
+    
     for po in sample_pos:
         existing_item = db.query(PurchaseOrder).filter(PurchaseOrder.item_name == po.item_name).first()
         if not existing_item:
