@@ -19,7 +19,9 @@ Enterprises lose millions of dollars annually to "procurement leakage"—vendor 
 We don't use LLMs to do math (they hallucinate). We use them solely as a parsing layer, leaving the financial security to a strict PostgreSQL database.
 
 1. **Extraction (AI Layer):** A vendor PDF is uploaded. We use the Groq API (Llama-3.1-8b-instant) with `temperature=0.0` to extract the unstructured text into a strict, validated JSON schema.
+
 2. **Validation (Data Layer):** The backend queries the enterprise's PostgreSQL database for the internal, pre-approved Purchase Order (PO).
+
 3. **Execution (Logic Layer):** A deterministic Python algorithm calculates discrepancies (`billed_price > approved_price` or `billed_qty > approved_qty`), flags unauthorized items, and outputs the exact Rupee (₹) leakage.
 
 ---
