@@ -53,17 +53,20 @@ This creates a mock "Approved Purchase Order" inventory containing servers, moni
 1. Database (Docker)
 Ensure Docker Desktop is running, then spin up the PostgreSQL container:
 
-Bash
+```text
 docker run --name ledgerlens-db -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=securepass -e POSTGRES_DB=ledgerlens -p 5432:5432 -d postgres:15-alpine
+```
+
 2. Backend (FastAPI)
 Navigate to the backend/ directory, set up your .env file with your GROQ_API_KEY, and launch the server:
 
-Bash
+```text
 python -m venv venv
 .\venv\Scripts\activate
 pip install -r requirements.txt
 python -m uvicorn app.main:app --reload
 The backend will automatically create the tables and seed the PO data.
+```
 
 3. Frontend (UI)
 The frontend is built as a zero-dependency HTML dashboard for rapid deployment. Simply open frontend/index.html in any modern web browser. It is configured to communicate via CORS with http://127.0.0.1:8000.
