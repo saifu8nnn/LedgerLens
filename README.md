@@ -1,9 +1,5 @@
 <p align="center">
-  <svg width="200" height="200" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-    <g fill="#3b82f6"> <path d="M150 150 H650 V300 H400 V850 H150 Z"/>
-      <path d="M450 600 H700 V300 H850 V850 H450 Z"/>
-    </g>
-  </svg>
+  <img src="assets/logo.svg" width="150" alt="LedgerLens Logo">
 </p>
 
 <h1 align="center">LedgerLens</h1>

@@ -1,0 +1,23 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <rect width="512" height="512" fill="white"/>
+
+    <path d="
+        M 75 75
+        H 305
+        V 165
+        H 165
+        V 437
+        H 75
+        Z
+    " fill="black"/>
+
+    <path d="
+        M 195 347
+        H 335
+        V 165
+        H 425
+        V 437
+        H 195
+        Z
+    " fill="black"/>
+</svg>
