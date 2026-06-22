@@ -32,12 +32,14 @@ LedgerLens/
 │   └── index.html            # Dashboard UI (HTML/CSS/Vanilla JS)
 │
 └── test_invoices/            # 5 Scenarios for live testing
-🗄️ A Note on the "Seed Database" (Honesty in Engineering)
+```
+## 🗄️ A Note on the "Seed Database"
 To demonstrate this MVP without requiring access to a live corporate ERP system (like SAP or Oracle), the PostgreSQL database is automatically populated via a seed_db function on startup.
 
 This creates a mock "Approved Purchase Order" inventory containing servers, monitors, and laptops. In a production environment, this seed script would be replaced by a secure Cron job or Webhook that syncs daily with the enterprise's actual internal ERP system.
 
-🚀 Deployment & Local Setup
+## 🚀 Deployment & Local Setup
+
 1. Database (Docker)
 Ensure Docker Desktop is running, then spin up the PostgreSQL container:
 
@@ -56,7 +58,7 @@ The backend will automatically create the tables and seed the PO data.
 3. Frontend (UI)
 The frontend is built as a zero-dependency HTML dashboard for rapid deployment. Simply open frontend/index.html in any modern web browser. It is configured to communicate via CORS with http://127.0.0.1:8000.
 
-🧪 Testing the Engine (The 5 Scenarios)
+## 🧪 Testing the Engine (The 5 Scenarios)
 We have provided 5 distinct PDFs in the repository to test the engine's edge cases. Upload these via the frontend UI to see the audit in action:
 
 🟢 INV_001_Perfect_Match.pdf: Vendor bills exactly what was approved. Result: PASSED.
