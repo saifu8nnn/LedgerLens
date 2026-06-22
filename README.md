@@ -26,6 +26,9 @@ We don't use LLMs to do math (they hallucinate). We use them solely as a parsing
 ```text
 LedgerLens/
 │
+├── assets
+│     └── logo.svg            # Logo of LedgerLens
+│
 ├── backend/                  # FastAPI & PostgreSQL Engine
 │   ├── app/
 │   │   ├── main.py           # Core AI & Routing logic
