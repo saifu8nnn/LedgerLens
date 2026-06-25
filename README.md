@@ -83,5 +83,5 @@ We have provided 5 distinct PDFs in the repository to test the engine's edge cas
 
 🔴 INV_005_The_Disaster.pdf: A combination of price hikes, quantity leaks, and unknown items. Result: FAILED (Complete itemized breakdown).
 
-## Live Link 
-[Ledger Lens](https://saifu8nnn.github.io/LedgerLens/)
+## Live Link (not applicable due to resource management concerns)
+I am shutting down the deployment so that i can make use of the free deployment services in advance projects but the complete code is here and open source.
